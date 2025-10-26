@@ -35,3 +35,13 @@ input{
     gap: 2px;
     padding: 10px;
 }
+button{
+    height: 50px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.orange{
+    background-color: #ff9500;
+}
