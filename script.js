@@ -1,23 +1,25 @@
 const display = document.getElementById('display');
-const add = document.getElementById('add');
-const minus = document.getElementById('minus');
-const multiply = document.getElementById('multiply');
-const divid = document.getElementById('divid');
 
-function calculateResult(output) {
-   switch (output) {
-       case '+':
-           return addValues(a, b);
-       case '-':
-           return subtractValues(a, b);
-       case '*':
-           return multiplyValues(a, b);
-       case '/':
-           return divideValues(a, b);
-       default:
-           alert("Error: Invalid operator");
-           return null;
-   }
+
+function calculate() {
+   if(display.value.includes('+')) {
+        const values = display.value.split('+');
+        return addValues(parseFloat(values[0]), parseFloat(values[1]));
+    } else if (display.value.includes('-')) {
+        const values = display.value.split('-');
+        return subtractValues(parseFloat(values[0]), parseFloat(values[1]));
+    } else if (display.value.includes('*')) {
+        const values = display.value.split('*');
+        return multiplyValues(parseFloat(values[0]), parseFloat(values[1]));
+    } else if (display.value.includes('/')) {
+        const values = display.value.split('/');
+        return divideValues(parseFloat(values[0]), parseFloat(values[1]));
+    } else {
+        return parseFloat(display.value);
+    }
+}
+function result() {
+    display.value = calculate();
 }
    
 
